@@ -2,7 +2,6 @@ package comment
 
 import (
 	"app/global"
-	"app/process"
 	"app/ui"
 	"fmt"
 )
@@ -45,10 +44,13 @@ func show() {
 	var i int
 
 	fmt.Scanln()
-	fmt.Println("List Semua Komentar:")
-	for i = 0; i < global.NData; i++ {
-		fmt.Printf("%d. %s\n", i+1, global.D[i].Komentar)
-		global.D[i].Score = process.HitungScore(global.D[i].Komentar)
+	if global.NData != 0 {
+		fmt.Println("List Semua Komentar:")
+		for i = 0; i < global.NData; i++ {
+			fmt.Printf("%d. %s\n", i+1, global.D[i].Komentar)
+		}
+	} else {
+		fmt.Println("Belum ada komentar, silahkan tambahkan komentar.")
 	}
 }
 
@@ -68,8 +70,6 @@ func insert() {
 	}
 	global.D[global.NData].Komentar = teks
 	global.NData++
-	fmt.Printf("Komentar ke-%d berhasil ditambahkan", global.NData)
-	ui.Pause()
 }
 
 func edit() {
@@ -105,6 +105,4 @@ func delete() {
 		global.D[i].Score = global.D[i+1].Score
 	}
 	global.NData--
-	fmt.Printf("Nomor %d telah berhasil di hapus.", delNUm)
-	ui.Pause()
 }

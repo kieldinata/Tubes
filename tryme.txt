@@ -1,0 +1,29 @@
+
+Copy text dibawah ini lalu paste ke terminal untuk mencoba aplikasi
+===================================================================
+1
+2
+Pelayanannya sangat ramah dan cepat, saya puas sekali!
+2
+Aplikasi ini sering error, bikin kesel banget.
+2
+Tampilan cukup oke, tapi masih banyak yang bisa ditingkatkan.
+2
+Luar biasa! Fitur barunya sangat membantu pekerjaan saya.
+2
+Saya tidak mengerti kenapa fitur ini malah dibatasi sekarang.
+5
+2
+2
+1
+error kesel jelek tapi tidak kenapa #
+2
+2
+membantu ramah cepat puas #
+2
+3
+saya sekali banget sering banyak #
+5
+3
+1
+===================================================================

@@ -112,18 +112,5 @@ func za() {
 }
 
 /*func search() {
-	var A global.TabData
-	var key, check string
-	var i, j int
-
-	ui.ClearScrn()
-	fmt.Scanln()
-	fmt.Print("tulis Abjad yang ingin dicari: ")
-	fmt.Scan(&key)
-	for i = 0; i < global.NData; i ++{
-		A[j] = global.D[i].Komentar
-		check
-		for
-	}
 
 }*/

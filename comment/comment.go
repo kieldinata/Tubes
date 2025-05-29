@@ -11,6 +11,7 @@ func Menu() {
 	for pilih != 5 {
 		ui.ClearScrn()
 		pilih = 0
+		ui.Logo()
 		fmt.Println("-------------------------------")
 		fmt.Println("COMMENT MENU")
 		fmt.Println("-------------------------------")
@@ -44,6 +45,7 @@ func show() {
 	var i int
 
 	fmt.Scanln()
+	ui.Logo()
 	if global.NData != 0 {
 		fmt.Println("List Semua Komentar:")
 		for i = 0; i < global.NData; i++ {
@@ -60,6 +62,7 @@ func insert() {
 	var teks string
 
 	fmt.Scanln()
+	ui.Logo()
 	fmt.Println("Masukkan komentar diakhiri dengan enter:")
 	for char != '\n' && i < global.MAXrune {
 		fmt.Scanf("%c", &char)

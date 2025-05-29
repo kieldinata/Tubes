@@ -13,6 +13,7 @@ func main() {
 	for pilih != 4 {
 		pilih = 0
 		ui.ClearScrn()
+		ui.Logo()
 		fmt.Println("-------------------------------")
 		fmt.Println("MAIN MENU")
 		fmt.Println("-------------------------------")

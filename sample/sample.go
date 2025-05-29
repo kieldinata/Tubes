@@ -11,6 +11,7 @@ func Menu() {
 	for pilih != 5 {
 		ui.ClearScrn()
 		pilih = 0
+		ui.Logo()
 		fmt.Println("-------------------------------")
 		fmt.Println("SAMPLE MENU")
 		fmt.Println("-------------------------------")

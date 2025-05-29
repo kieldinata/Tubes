@@ -9,8 +9,9 @@ import (
 
 func Menu() {
 	var pilih int
-	for pilih != 4 {
+	for pilih != 3 {
 		ui.ClearScrn()
+		ui.Logo()
 		pilih = 0
 		fmt.Println("-------------------------------")
 		fmt.Println("STATISTIC MENU")
@@ -37,6 +38,7 @@ func filters() {
 	var pilih int
 	for pilih != 5 {
 		ui.ClearScrn()
+		ui.Logo()
 		pilih = 0
 		fmt.Println("Tunjukkan Komentar berdasarkan:")
 		fmt.Println("1. Terburuk (ascending)")
@@ -59,14 +61,15 @@ func filters() {
 	}
 
 }
-func show(A global.TabData) {
+func show(A global.TabData, filterName string) {
 	var i int
 	var komentar string
 	var score float64
 
 	ui.ClearScrn()
 	fmt.Scanln()
-	fmt.Println("List Komentar Berdasarkan Filter:")
+	ui.Logo()
+	fmt.Println("List Komentar Berdasarkan Filter " + filterName + ":")
 	if global.NData == 0 {
 		fmt.Println("Belum ada komentar, silahkan isi terlebih dahulu.")
 	} else {
@@ -90,22 +93,37 @@ func show(A global.TabData) {
 
 func worst() {
 	var W global.TabData = process.HitungScore((global.D))
-	show(process.InsertionSortData(W, "asc", "Score"))
+	show(process.InsertionSortData(W, "asc", "Score"), "From Worst")
 }
 
 func best() {
 	var B global.TabData = process.HitungScore((global.D))
-	show(process.InsertionSortData(B, "dsc", "Score"))
+	show(process.InsertionSortData(B, "dsc", "Score"), "From Best")
 }
 
 func az() {
 	var AZ global.TabData = process.SelectionSortData(global.D, "asc", "Komentar")
-	show(process.HitungScore(AZ))
+	show(process.HitungScore(AZ), "From A to Z")
 }
 
 func za() {
 	var ZA global.TabData = process.SelectionSortData(global.D, "dsc", "Komentar")
-	show(process.HitungScore(ZA))
+	show(process.HitungScore(ZA), "From Z to A")
 }
 
-//bagian searching() {}
+/*func search() {
+	var A global.TabData
+	var key, check string
+	var i, j int
+
+	ui.ClearScrn()
+	fmt.Scanln()
+	fmt.Print("tulis Abjad yang ingin dicari: ")
+	fmt.Scan(&key)
+	for i = 0; i < global.NData; i ++{
+		A[j] = global.D[i].Komentar
+		check
+		for
+	}
+
+}*/

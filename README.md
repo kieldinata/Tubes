@@ -30,7 +30,8 @@ Setiap komentar akan diproses kata per kata, dibandingkan dengan sample yang ter
 - 📊 Analisis skor komentar
 - 🔢 Sorting komentar berdasarkan skor menggunakan **Insertion Sort**
 - 🔤 Sorting komentar berdasarkan abjad menggunakan **Selection Sort**
-- 🔍 Pencarian komentar berdasarkan awalan menggunakan **Sequential Search**
+- 🔍 Pencarian komentar berdasarkan abjad menggunakan **Sequential Search**
+- 🔍 Pencarian komentar berdasarkan kategori menggunakan **Binary Search**
 
 ---
 

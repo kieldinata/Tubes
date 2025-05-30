@@ -126,3 +126,37 @@ func InsertionSortData(A global.TabData, category string, comparator string) glo
 	}
 	return A
 }
+
+func SequentialSearch(A global.TabData, keyword string) global.TabData {
+	var result global.TabData
+	var i, j int
+	var kata, komentar string
+	var ch rune
+	var lanjut bool
+
+	keyword = toLower(keyword)
+	global.NResult = 0
+
+	for i = 0; i < global.NData; i++ {
+		komentar = A[i].Komentar + " "
+		kata = ""
+		lanjut = false
+
+		for j = 0; j < len(komentar); j++ {
+			ch = rune(komentar[j])
+
+			if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+				kata += string(ch)
+			} else if ch == ' ' {
+				kata = toLower(kata)
+				if kata == keyword && !lanjut {
+					result[global.NResult] = A[i]
+					global.NResult++
+					lanjut = true
+				}
+				kata = ""
+			}
+		}
+	}
+	return result
+}

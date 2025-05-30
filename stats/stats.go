@@ -111,6 +111,22 @@ func za() {
 	show(process.HitungScore(ZA), "From Z to A")
 }
 
-/*func search() {
-
-}*/
+func search() {
+	ui.ClearScrn()
+	ui.Logo()
+	
+	var keyword string
+	fmt.Print("Masukkan kata kunci pencarian: ")
+	fmt.Scanln(&keyword)
+	
+	
+	result := process.SequentialSearch(global.D, keyword)
+	
+	if len(result) == 0 || global.NResult == 0 {
+		fmt.Println("Komentar dengan kata kunci tersebut tidak ditemukan.")
+	} else {
+		show(result, "Hasil Pencarian untuk '"+keyword+"'")
+	}
+	
+	ui.Pause()
+}

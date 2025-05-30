@@ -37,9 +37,10 @@ Setiap komentar akan diproses kata per kata, dibandingkan dengan sample yang ter
 
 ## 🧪 Instalasi
 
-Cukup **salin (copy)** seluruh folder proyek ini ke dalam komputer kamu.  
-(📁 Pastikan semua file Go dan subfolder tetap utuh di dalam satu folder utama.)
-
+Cukup **salin (copy)** seluruh folder proyek ini ke dalam komputer kamu, atau buka terminal di folder tujuan dan execute command dibawah :
+```bash
+git clone https://github.com/kieldinata/Tubes
+```
 ---
 
 ## ▶️ Penggunaan
@@ -48,3 +49,4 @@ Masuk ke folder tempat file `main.go` berada, lalu jalankan perintah berikut di 
 
 ```bash
 go run main.go
+```

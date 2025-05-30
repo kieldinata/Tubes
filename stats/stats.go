@@ -28,7 +28,7 @@ func Menu() {
 			filters()
 		case 2:
 			ui.ClearScrn()
-			//search()
+			search()
 		}
 	}
 }

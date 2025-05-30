@@ -22,3 +22,6 @@ var Mult TabSamples
 
 var NData int
 var NB, NG, NM int
+
+var Result TabData
+var NResult int

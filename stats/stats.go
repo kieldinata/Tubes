@@ -38,18 +38,20 @@ func Menu() {
 // bagian sorting
 func filters() {
 	var pilih int
-	for pilih != 5 {
+	for pilih != 7 {
 		ui.ClearScrn()
 		ui.Logo()
-		fmt.Println(color.Title + "<APP - STATISTIC - SORT.................>" + color.Reset)
+		fmt.Println(color.Title + "<APP - STATISTIC - SORT.................>\n" + color.Reset)
 		pilih = 0
-		fmt.Println("Tunjukkan Komentar berdasarkan:")
+		fmt.Println("Tunjukkan statistik berdasarkan:")
 		fmt.Println("1. Terburuk (ascending)")
 		fmt.Println("2. Terbaik (descending)")
 		fmt.Println("3. A-Z (ascending)")
 		fmt.Println("4. Z-A (descending)")
-		fmt.Printf("5. %sBack%s\n", color.Red, color.Reset)
-		fmt.Print("Pilih angka (1/2/3/4/5): " + color.Input)
+		fmt.Println("5. Terpendek (ascending)")
+		fmt.Println("6. Terpanjang (descending)")
+		fmt.Printf("7. %sBack%s\n", color.Red, color.Reset)
+		fmt.Print("Pilih angka (1/2/3/4/5/6/7): " + color.Input)
 		fmt.Scan(&pilih)
 		fmt.Print(color.Reset)
 		switch pilih {
@@ -61,6 +63,10 @@ func filters() {
 			az()
 		case 4:
 			za()
+		case 5:
+			shorty()
+		case 6:
+			long()
 		}
 	}
 
@@ -73,7 +79,7 @@ func show(A global.TabData, filterName string, n int) {
 	ui.ClearScrn()
 	fmt.Scanln()
 	ui.Logo()
-	fmt.Println(color.Title + "<APP - STATISTIC - RESULT...............>" + color.Reset)
+	fmt.Println(color.Title + "<APP - STATISTIC - RESULT...............>\n" + color.Reset)
 	fmt.Println("List Komentar Berdasarkan Filter " + filterName + ":")
 	if n == 0 {
 		fmt.Println("Belum ada komentar, silahkan isi terlebih dahulu.")
@@ -122,13 +128,23 @@ func za() {
 	show(ZA, "From Z to A", global.NData)
 }
 
+func shorty() {
+	var SH global.TabData = process.SelectionSortData(global.D, "asc", "Length")
+	show(SH, "From Shortest", global.NData)
+}
+
+func long() {
+	var LN global.TabData = process.SelectionSortData(global.D, "dsc", "Length")
+	show(LN, "From Longest", global.NData)
+}
+
 // bagian searching
 func search() {
 	var pilih int
 	for pilih != 3 {
 		ui.ClearScrn()
 		ui.Logo()
-		fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>" + color.Reset)
+		fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>\n" + color.Reset)
 		pilih = 0
 		fmt.Println("Cari Komentar berdasarkan:")
 		fmt.Println("1. Keyword")
@@ -153,6 +169,7 @@ func keywordSearch() {
 
 	ui.ClearScrn()
 	ui.Logo()
+	fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>\n" + color.Reset)
 	fmt.Scanln()
 	fmt.Print("Masukkan kata kunci pencarian: " + color.Input)
 	fmt.Scan(&keyword)
@@ -175,6 +192,7 @@ func categorySearch() {
 	for category != 6 {
 		ui.ClearScrn()
 		ui.Logo()
+		fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>\n" + color.Reset)
 		fmt.Println("Masukkan kategori yang ingin dicari: ")
 		fmt.Println("1. SANGAT POSITIF")
 		fmt.Println("2. CUKUP POSITIF")
@@ -185,7 +203,9 @@ func categorySearch() {
 		fmt.Print("Pilih angka (1/2/3/4/5): " + color.Input)
 		fmt.Scan(&category)
 		fmt.Print(color.Reset)
-
+		ui.ClearScrn()
+		ui.Logo()
+		fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>\n" + color.Reset)
 		switch category {
 		case 1:
 			A = process.BinarySearch(global.D, "[SANGAT POSITIF]")

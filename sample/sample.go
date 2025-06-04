@@ -13,8 +13,7 @@ func Menu() {
 		ui.ClearScrn()
 		pilih = 0
 		ui.Logo()
-		fmt.Println(color.Title + "<APP - SAMPLE...........................>" + color.Reset)
-		fmt.Println("")
+		fmt.Println(color.Title + "<APP - SAMPLE...........................>\n" + color.Reset)
 		fmt.Println("1. Tunjukkan Semua Sample")
 		fmt.Println("2. Tambahkan Sample")
 		fmt.Println("3. Edit Sample")
@@ -49,7 +48,7 @@ func show() {
 	var i int
 
 	fmt.Scanln()
-	fmt.Println(color.Title + "<APP - SAMPLE - SHOW....................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - SHOW....................>\n" + color.Reset)
 	if global.NB != 0 {
 		fmt.Println(color.DarkRed + "List Sample Bad:" + color.Reset)
 		for i = 0; i < global.NB; i++ {
@@ -81,7 +80,7 @@ func insert() {
 	var tipe int
 	var input string
 
-	fmt.Println(color.Title + "<APP - SAMPLE - ADD.....................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - ADD.....................>\n" + color.Reset)
 	fmt.Scanln()
 	fmt.Println("Pilih tipe sample:")
 	fmt.Println("1. Bad")
@@ -92,7 +91,7 @@ func insert() {
 	fmt.Print(color.Reset)
 	ui.ClearScrn()
 	ui.Logo()
-	fmt.Println(color.Title + "<APP - SAMPLE - ADD.....................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - ADD.....................>\n" + color.Reset)
 	fmt.Println("Masukkan sample anda diakhiri dengan # sebagai sentinel:" + color.Input)
 	for input != "#" {
 		fmt.Scan(&input)
@@ -116,7 +115,7 @@ func insert() {
 func edit() {
 	var tipe int
 
-	fmt.Println(color.Title + "<APP - SAMPLE - EDIT....................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - EDIT....................>\n" + color.Reset)
 	fmt.Scanln()
 	fmt.Println("Pilih tipe sample yang ingin di hapus:")
 	fmt.Println("1. Bad")
@@ -140,9 +139,13 @@ func edit() {
 
 func editPerType(x *global.TabSamples, nX int) {
 	var edNum int
+	var i int
 
 	ui.Logo()
-	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>\n" + color.Reset)
+	for i = 0; i < nX; i++ {
+		fmt.Printf("%d. %-10s\n", i+1, x[i])
+	}
 	fmt.Print("Pilih nomor yang ingin di edit: " + color.Input)
 	fmt.Scan(&edNum)
 	fmt.Print(color.Reset)
@@ -159,7 +162,7 @@ func editPerType(x *global.TabSamples, nX int) {
 func delete() {
 	var tipe int
 
-	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>\n" + color.Reset)
 	fmt.Scanln()
 	fmt.Println("Pilih tipe sample yang ingin di hapus:")
 	fmt.Println("1. Bad")
@@ -186,14 +189,10 @@ func deletePerType(x *global.TabSamples, nX *int) {
 	var delNum int
 
 	ui.Logo()
-	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>" + color.Reset)
+	fmt.Println(color.Title + "<APP - SAMPLE - DELETE..................>\n" + color.Reset)
 	for i = 0; i < *nX; i++ {
-		fmt.Printf("%d. %-10s ", i+1, x[i])
-		if (i+1)%10 == 0 {
-			fmt.Println()
-		}
+		fmt.Printf("%d. %-10s\n", i+1, x[i])
 	}
-	fmt.Println()
 	fmt.Print("Pilih nomor yang ingin di hapus: " + color.Input)
 	fmt.Scan(&delNum)
 	fmt.Print(color.Reset)

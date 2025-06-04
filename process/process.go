@@ -95,6 +95,10 @@ func SelectionSortData(A global.TabData, category string, comparator string) glo
 				parameter = A[j].Komentar < A[idx].Komentar
 			case "dscKomentar":
 				parameter = A[j].Komentar > A[idx].Komentar
+			case "ascLength":
+				parameter = len(A[j].Komentar) < len(A[idx].Komentar)
+			case "dscLength":
+				parameter = len(A[j].Komentar) > len(A[idx].Komentar)
 			}
 			if parameter {
 				idx = j
@@ -123,6 +127,8 @@ func InsertionSortData(A global.TabData, category string, comparator string) glo
 				parameter = temp.Score < A[j].Score
 			case "dscScore":
 				parameter = temp.Score > A[j].Score
+			case "ascCategory":
+				parameter = temp.Category < A[j].Category
 			}
 
 			if parameter {
@@ -171,36 +177,6 @@ func SequentialSearch(A global.TabData, keyword string) global.TabData {
 	return result
 }
 
-func InsertionSort4Search(A global.TabData, category string, comparator string) global.TabData {
-	var i, j int
-	var temp global.Data
-	var parameter, lanjut bool
-
-	for i = 1; i < global.NData; i++ {
-		temp = A[i]
-		j = i - 1
-		lanjut = true
-
-		for j >= 0 && lanjut {
-			switch category + comparator {
-			case "ascScore":
-				parameter = temp.Category < A[j].Category
-			case "dscScore":
-				parameter = temp.Category > A[j].Category
-			}
-
-			if parameter {
-				A[j+1] = A[j]
-				j--
-			} else {
-				lanjut = false
-			}
-		}
-		A[j+1] = temp
-	}
-	return A
-}
-
 func BinarySearch(A global.TabData, category string) global.TabData {
 	var B global.TabData
 	var kiri, kanan, mid int
@@ -208,7 +184,7 @@ func BinarySearch(A global.TabData, category string) global.TabData {
 	var found bool = false
 
 	global.NResult = 0
-	A = InsertionSort4Search(A, "asc", "Score")
+	A = InsertionSortData(A, "asc", "Category")
 	kiri = 0
 	kanan = global.NData - 1
 	for kiri <= kanan && !found {

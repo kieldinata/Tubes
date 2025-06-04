@@ -1,47 +1,139 @@
+Teks dibawah ini adalah input yang bisa dimasukkan kedalam program saat baru dibuka.
+Copy tulisan dibawah ini dan langsung paste ke terminal di main menu...
 
-Copy text dibawah ini lalu paste ke terminal untuk mencoba aplikasi
-===================================================================
+
 1
 2
-Pelayanannya sangat ramah dan cepat, saya puas sekali!
+Pelayanannya sangat ramah dan cepat, saya puas sekali! Mereka melayani dengan senyum dan penuh perhatian.
 2
-Aplikasi ini sering error, bikin kesel banget.
+Aplikasi ini sering error, bikin kesel banget. Bahkan kadang tidak bisa dibuka sama sekali setelah update terakhir.
 2
-Tampilan cukup oke, tapi masih banyak yang bisa ditingkatkan.
+Tampilan cukup oke, tapi masih banyak yang bisa ditingkatkan. Beberapa menu sulit ditemukan dan navigasinya membingungkan.
 2
-Ayam goreng adalah ayam yang digoreng saja seperti ayam.
+Ayam goreng adalah ayam yang digoreng saja seperti ayam. Meskipun begitu, rasanya biasa saja dan kurang bumbu.
 2
-Luar biasa! Fitur barunya sangat membantu pekerjaan saya.
+Luar biasa! Fitur barunya sangat membantu pekerjaan saya. Sekarang proses input data jadi lebih cepat dan akurat.
 2
-Saya tidak mengerti kenapa fitur ini malah dibatasi sekarang.
+Saya tidak mengerti kenapa fitur ini malah dibatasi sekarang. Padahal sebelumnya sangat berguna untuk pengguna seperti saya.
 2
-Pelayanan sangat lambat dan tidak sopan, saya kecewa berat.
+Pelayanan sangat lambat dan tidak sopan, saya kecewa berat. Butuh waktu lama hanya untuk hal sepele seperti konfirmasi pembayaran.
 2
-Sungguh pengalaman yang menyenangkan, saya akan kembali lagi.
+Sungguh pengalaman yang menyenangkan, saya akan kembali lagi. Semua terasa mudah dan nyaman sejak awal hingga akhir.
 2
-Tidak sesuai dengan deskripsi, sangat mengecewakan.
+Tidak sesuai dengan deskripsi, sangat mengecewakan. Barang datang rusak dan layanan komplainnya pun tidak responsif.
 2
-Mudah digunakan dan tampilannya sangat menarik.
+Mudah digunakan dan tampilannya sangat menarik. Cocok untuk pemula maupun pengguna berpengalaman.
 2
-Harga terlalu mahal untuk kualitas yang ditawarkan.
+Harga terlalu mahal untuk kualitas yang ditawarkan. Ada banyak pilihan lain dengan harga lebih masuk akal dan fitur serupa.
 2
-Selalu crash saat digunakan, sangat tidak direkomendasikan.
+Selalu crash saat digunakan, sangat tidak direkomendasikan. Tidak stabil dan sering menutup sendiri saat sedang mengerjakan sesuatu.
 2
-Fitur baru sangat bermanfaat dan efisien.
+Fitur baru sangat bermanfaat dan efisien. Saya bisa menyelesaikan tugas dua kali lebih cepat dari sebelumnya.
 2
-Kenapa tombol simpan malah menghapus datanya?
+Kenapa tombol simpan malah menghapus datanya? Ini sangat fatal dan membuat saya kehilangan banyak informasi penting.
 2
-Respons CS sangat cepat dan membantu!
+Respons CS sangat cepat dan membantu! Bahkan saya dihubungi langsung untuk menyelesaikan masalah saya.
+2  
+Layanan parkirnya sempit dan bikin ribet banget, mohon diperluas.
+2  
+Suaranya pecah saat video diputar, tolong perbaiki audionya.
+2  
+Kurir datang terlalu malam dan tidak menghubungi sebelumnya.
+2  
+Sistem booking-nya ribet, harus isi data berkali-kali.
+2  
+Minumannya enak tapi penyajiannya terlalu lama.
+2  
+Saya suka dengan warna tema barunya, terlihat modern dan segar.
+2  
+Sayangnya tidak ada pilihan metode pembayaran e-wallet.
+2  
+Pelatihan online-nya cukup informatif dan mudah diikuti.
+2  
+Koneksi sering putus saat digunakan di malam hari.
+2  
+Harga promo sangat membantu, saya jadi lebih hemat bulan ini.
+2  
+Aplikasi terasa berat saat dibuka pertama kali.
+2  
+Penjelasan admin sangat jelas dan ramah, saya puas.
+2  
+Fitur pencarian produk masih kurang akurat.
+2  
+Makanan datang dalam keadaan dingin dan tidak segar.
+2  
+Notifikasi terlalu sering muncul, agak mengganggu.
+2  
+Tempatnya nyaman buat kerja, ada colokan dan WiFi cepat.
+2  
+Proses refund-nya cepat, sangat memuaskan.
+2  
+Terlalu banyak iklan, tolong dikurangi!
+2  
+Saya menemukan bug saat mengganti foto profil.
+2  
+Desain packaging-nya keren dan unik, saya suka.
+2  
+Sayurannya tidak segar, sudah mulai layu saat sampai.
+2  
+Tersedia banyak pilihan menu vegan, mantap!
+2  
+Admin kurang responsif saat saya tanya lewat chat.
+2  
+Produk datang lebih cepat dari estimasi, terima kasih!
+2  
+Fitur dark mode sangat membantu mata di malam hari.
+2  
+Barang tidak sesuai pesanan, warna dan ukuran beda.
+2  
+Saya suka cara mereka menjelaskan langkah-langkah instalasi.
+2  
+Loading-nya lama banget padahal sinyal bagus.
+2  
+Staf keamanan sangat membantu saat saya kehilangan barang.
+2  
+Voucher tidak bisa digunakan meski masih valid.
+2  
+Desain aplikasi simpel dan mudah dipahami, cocok untuk orang tua.
+2  
+Aplikasinya jelek banget, ngapain juga dipakai, buang-buang waktu!
+2  
+Pelayanannya lambat dan payah, bikin emosi nunggu kayak orang bego!
+2  
+Mahal gini kok kualitasnya rusak, gila ya, ga masuk akal.
+2  
+Sistemnya sering crash, udah gitu support-nya lelet parah, percuma lapor!
+2  
+Barang datang dalam kondisi basi dan bau, benar-benar mengecewakan!
+2  
+Fitur penting malah gagal jalan, ngapain ada kalau kacau gini?
+2  
+Terlambat kirim padahal udah bayar mahal, ini mah parah banget!
+2  
+Produknya kosong waktu diterima, isinya mana? Buruk banget pelayanannya!
+2  
+Saya emosi, chat ke CS cuma dibales template, payah banget sih!
+2  
+Mobil yang dikirim ternyata mogok, kayaknya ga dicek dulu, bener-bener kacau!
+2  
+Kamar hotel bau dan bising, ga bisa tidur, ini sih jelek parah!
+2  
+Paket datang patah dan ga bisa dipakai, pelayanan rusak total!
+2  
+Barangnya beda dari deskripsi, ngaco banget, bener-bener mengecewakan!
+2  
+Terlalu sering error, tiap buka aplikasi bikin kesel, buang-buang waktu doang!
+2  
+Harga mahal, kualitas payah, udah gitu lambat banget prosesnya, bener-bener buruk.
 5
 2
 2
 1
-error kesel jelek tapi tidak kenapa mahal mengecewakan crash mahal #
+error kesel jelek tapi tidak kenapa mahal mengecewakan crash mahal rusak lambat buruk kacau gagal parah payah lelet mogok bising basi terlambat patah kosong bau macet #
 2
 2
-membantu ramah cepat puas menyenangkan #
+membantu ramah cepat puas menyenangkan menarik luar biasa efisien akurat nyaman responsif profesional sopan menyeluruh bersih praktis keren hemat komunikatif enak terjangkau #
 2
 3
-saya sekali banget sering banyak malah sangat sungguh terlalu #
+saya sekali banget sering banyak malah sangat sungguh terlalu kami pengguna kami semua bahkan mereka dia kita #
 5
-===================================================================

@@ -1,6 +1,7 @@
 package sample
 
 import (
+	"app/color"
 	"app/global"
 	"app/ui"
 	"fmt"
@@ -12,29 +13,33 @@ func Menu() {
 		ui.ClearScrn()
 		pilih = 0
 		ui.Logo()
-		fmt.Println("-------------------------------")
-		fmt.Println("SAMPLE MENU")
-		fmt.Println("-------------------------------")
+		fmt.Println(color.Title + "<SAMPLE MENU........................>" + color.Reset)
+		fmt.Println("")
 		fmt.Println("1. Tunjukkan Semua Sample")
 		fmt.Println("2. Tambahkan Sample")
 		fmt.Println("3. Edit Sample")
 		fmt.Println("4. Hapus Sample")
-		fmt.Println("5. Back")
-		fmt.Print("Pilih dengan angka (1/2/3/4): ")
-		fmt.Scanf("%d", &pilih)
+		fmt.Printf("5. %sBack%s\n", color.Red, color.Reset)
+		fmt.Print("Pilih dengan angka (1/2/3/4): " + color.Input)
+		fmt.Scan(&pilih)
+		fmt.Print(color.Reset)
 
 		switch pilih {
 		case 1:
 			ui.ClearScrn()
+			ui.Logo()
 			show()
 		case 2:
 			ui.ClearScrn()
+			ui.Logo()
 			insert()
 		case 3:
 			ui.ClearScrn()
+			ui.Logo()
 			edit()
 		case 4:
 			ui.ClearScrn()
+			ui.Logo()
 			delete()
 		}
 	}
@@ -44,17 +49,29 @@ func show() {
 	var i int
 
 	fmt.Scanln()
-	fmt.Println("List Sample Bad:")
-	for i = 0; i < global.NB; i++ {
-		fmt.Printf("%d. %-10s\n", i+1, global.Bad[i])
+	if global.NB != 0 {
+		fmt.Println(color.DarkRed + "List Sample Bad:" + color.Reset)
+		for i = 0; i < global.NB; i++ {
+			fmt.Printf("%d. %-10s\n", i+1, global.Bad[i])
+		}
+	} else {
+		fmt.Println(color.Gray + "Sample [bad] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
 	}
-	fmt.Println("\n\nList Sample Good:")
-	for i = 0; i < global.NG; i++ {
-		fmt.Printf("%d. %-10s\n", i+1, global.Good[i])
+	if global.NG != 0 {
+		fmt.Println(color.Green + "\n\nList Sample Good:" + color.Reset)
+		for i = 0; i < global.NG; i++ {
+			fmt.Printf("%d. %-10s\n", i+1, global.Good[i])
+		}
+	} else {
+		fmt.Println(color.Gray + "Sample [good] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
 	}
-	fmt.Println("\n\nList Sample Multiplier:")
-	for i = 0; i < global.NM; i++ {
-		fmt.Printf("%d. %-10s \n", i+1, global.Mult[i])
+	if global.NM != 0 {
+		fmt.Println(color.Yellow + "\n\nList Sample Multiplier:" + color.Reset)
+		for i = 0; i < global.NM; i++ {
+			fmt.Printf("%d. %-10s \n", i+1, global.Mult[i])
+		}
+	} else {
+		fmt.Println(color.Gray + "Sample [mult] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
 	}
 	ui.Pause()
 }
@@ -68,10 +85,11 @@ func insert() {
 	fmt.Println("1. Bad")
 	fmt.Println("2. Good")
 	fmt.Println("3. Multiplier")
-	fmt.Print("tipe pilihan (1/2/3): ")
+	fmt.Print("tipe pilihan (1/2/3): " + color.Input)
 	fmt.Scan(&tipe)
+	fmt.Print(color.Reset)
 	ui.ClearScrn()
-	fmt.Println("Masukkan sample anda diakhiri dengan # sebagai sentinel:")
+	fmt.Println("Masukkan sample anda diakhiri dengan # sebagai sentinel:" + color.Input)
 	for input != "#" {
 		fmt.Scan(&input)
 		if input != "#" {
@@ -87,6 +105,7 @@ func insert() {
 			}
 		}
 	}
+	fmt.Print(color.Reset)
 	ui.Pause()
 }
 
@@ -98,8 +117,9 @@ func edit() {
 	fmt.Println("1. Bad")
 	fmt.Println("2. Good")
 	fmt.Println("3. Multiplier")
-	fmt.Print("tipe pilihan (1/2/3): ")
+	fmt.Print("tipe pilihan (1/2/3): " + color.Input)
 	fmt.Scan(&tipe)
+	fmt.Print(color.Reset)
 	ui.ClearScrn()
 	if tipe == 1 {
 		editPerType(&global.Bad, global.NB)
@@ -108,7 +128,7 @@ func edit() {
 	} else if tipe == 3 {
 		editPerType(&global.Mult, global.NM)
 	} else {
-		fmt.Print("Tipe tidak valid!")
+		fmt.Println(color.Warning + "Tipe tidak valid!" + color.Reset)
 		ui.Pause()
 	}
 }
@@ -116,14 +136,15 @@ func edit() {
 func editPerType(x *global.TabSamples, nX int) {
 	var edNum int
 
-	fmt.Print("Pilih nomor yang ingin di edit: ")
+	fmt.Print("Pilih nomor yang ingin di edit: " + color.Input)
 	fmt.Scan(&edNum)
+	fmt.Print(color.Reset)
 	if edNum-1 < 0 || edNum-1 >= nX {
-		fmt.Print("Nomor tidak valid!")
+		fmt.Println(color.Warning + "Nomor tidak valid!" + color.Reset)
 	} else {
-		fmt.Println("Masukkan sample  versi terbaru: ")
+		fmt.Println("Masukkan sample  versi terbaru: " + color.Input)
 		fmt.Scan(&x[edNum-1])
-		fmt.Print("Sample berhasil di ubah!")
+		fmt.Print(color.Log + "Sample berhasil di ubah!" + color.Reset)
 	}
 	ui.Pause()
 }
@@ -136,8 +157,9 @@ func delete() {
 	fmt.Println("1. Bad")
 	fmt.Println("2. Good")
 	fmt.Println("3. Multiplier")
-	fmt.Print("tipe pilihan (1/2/3): ")
+	fmt.Print("tipe pilihan (1/2/3): " + color.Input)
 	fmt.Scan(&tipe)
+	fmt.Print(color.Reset)
 	ui.ClearScrn()
 	if tipe == 1 {
 		deletePerType(&global.Bad, &global.NB)
@@ -162,8 +184,9 @@ func deletePerType(x *global.TabSamples, nX *int) {
 		}
 	}
 	fmt.Println()
-	fmt.Print("Pilih nomor yang ingin di hapus: ")
+	fmt.Print("Pilih nomor yang ingin di hapus: " + color.Input)
 	fmt.Scan(&delNum)
+	fmt.Print(color.Reset)
 	if delNum-1 < 0 || delNum-1 >= *nX {
 		fmt.Print("Nomor tidak valid!")
 	} else {

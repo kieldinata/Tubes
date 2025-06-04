@@ -1,6 +1,7 @@
 package ui
 
 import (
+	"app/color"
 	"fmt"
 	"os"
 	"os/exec"
@@ -13,7 +14,7 @@ func ClearScrn() {
 }
 
 func Pause() {
-	fmt.Print("\n\nTekan enter untuk melanjutkan...")
+	fmt.Print(color.Gray + "\n\nTekan enter untuk melanjutkan..." + color.Reset)
 	fmt.Scanln()
 }
 

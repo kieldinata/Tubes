@@ -1,6 +1,7 @@
 package comment
 
 import (
+	"app/color"
 	"app/global"
 	"app/ui"
 	"fmt"
@@ -12,16 +13,16 @@ func Menu() {
 		ui.ClearScrn()
 		pilih = 0
 		ui.Logo()
-		fmt.Println("-------------------------------")
-		fmt.Println("COMMENT MENU")
-		fmt.Println("-------------------------------")
+		fmt.Println(color.Title + "<COMMENT MENU.......................>" + color.Reset)
+		fmt.Println("")
 		fmt.Println("1. List Semua Komentar")
 		fmt.Println("2. Tambahkan Komentar")
 		fmt.Println("3. Edit Komentar")
 		fmt.Println("4. Hapus Komentar")
-		fmt.Println("5. Back")
-		fmt.Print("Pilih dengan angka (1/2/3/4): ")
-		fmt.Scanf("%d", &pilih)
+		fmt.Printf("5. %sBack%s\n", color.Red, color.Reset)
+		fmt.Print("Pilih dengan angka (1/2/3/4): " + color.Input)
+		fmt.Scan(&pilih)
+		fmt.Print(color.Reset)
 
 		switch pilih {
 		case 1:
@@ -49,10 +50,10 @@ func show() {
 	if global.NData != 0 {
 		fmt.Println("List Semua Komentar:")
 		for i = 0; i < global.NData; i++ {
-			fmt.Printf("%d. %s\n", i+1, global.D[i].Komentar)
+			fmt.Printf("%d. %s%s%s\n", i+1, color.Show, global.D[i].Komentar, color.Reset)
 		}
 	} else {
-		fmt.Println("Belum ada komentar, silahkan tambahkan komentar.")
+		fmt.Println(color.Log + "Belum ada komentar, silahkan tambahkan komentar." + color.Reset)
 	}
 }
 
@@ -63,7 +64,7 @@ func insert() {
 
 	fmt.Scanln()
 	ui.Logo()
-	fmt.Println("Masukkan komentar diakhiri dengan enter:")
+	fmt.Println("Masukkan komentar diakhiri dengan enter:" + color.Input)
 	for char != '\n' && i < global.MAXrune {
 		fmt.Scanf("%c", &char)
 		if char != '\n' && char != '\r' {
@@ -71,6 +72,7 @@ func insert() {
 			i++
 		}
 	}
+	fmt.Print(color.Reset)
 	global.D[global.NData].Komentar = teks
 	global.NData++
 }
@@ -81,18 +83,24 @@ func edit() {
 	var teks string = ""
 
 	show()
-	fmt.Print("\nPilih nomor yang ingin di edit: ")
-	fmt.Scan(&editNum)
-	fmt.Scanln()
-	fmt.Println("Tuliskan komentar setelah di edit: ")
-	for char != '\n' && i < global.MAXrune {
-		fmt.Scanf("%c", &char)
-		if char != '\n' && char != '\r' {
-			teks += string(char)
-			i++
+	if global.NData > 0 {
+		fmt.Print("\nPilih nomor yang ingin di edit: " + color.Input)
+		fmt.Scan(&editNum)
+		fmt.Print(color.Reset)
+		fmt.Scanln()
+		fmt.Println("Tuliskan komentar setelah di edit: " + color.Input)
+		for char != '\n' && i < global.MAXrune {
+			fmt.Scanf("%c", &char)
+			if char != '\n' && char != '\r' {
+				teks += string(char)
+				i++
+			}
 		}
+		fmt.Print(color.Reset)
+		global.D[editNum-1].Komentar = teks
+	} else {
+		ui.Pause()
 	}
-	global.D[editNum-1].Komentar = teks
 }
 
 func delete() {
@@ -100,12 +108,17 @@ func delete() {
 	var i int
 
 	show()
-	fmt.Print("Pilih nomor yang ingin di hapus: ")
-	fmt.Scan(&delNUm)
+	if global.NData > 0 {
+		fmt.Print("\nPilih nomor yang ingin di hapus: " + color.Input)
+		fmt.Scan(&delNUm)
+		fmt.Print(color.Reset)
 
-	for i = delNUm - 1; i < global.NData-1; i++ {
-		global.D[i].Komentar = global.D[i+1].Komentar
-		global.D[i].Score = global.D[i+1].Score
+		for i = delNUm - 1; i < global.NData-1; i++ {
+			global.D[i].Komentar = global.D[i+1].Komentar
+			global.D[i].Score = global.D[i+1].Score
+		}
+		global.NData--
+	} else {
+		ui.Pause()
 	}
-	global.NData--
 }

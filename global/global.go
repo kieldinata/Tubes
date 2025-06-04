@@ -6,9 +6,9 @@ const MAXword int = 255
 const MAXsample int = 120
 
 type Data struct {
-	User     string
 	Komentar string
 	Score    float64
+	Category string
 }
 
 type Karakter [MAXrune]rune
@@ -22,6 +22,4 @@ var Mult TabSamples
 
 var NData int
 var NB, NG, NM int
-
-var Result TabData
 var NResult int

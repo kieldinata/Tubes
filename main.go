@@ -1,6 +1,7 @@
 package main
 
 import (
+	"app/color"
 	"app/comment"
 	"app/sample"
 	"app/stats"
@@ -14,15 +15,15 @@ func main() {
 		pilih = 0
 		ui.ClearScrn()
 		ui.Logo()
-		fmt.Println("-------------------------------")
-		fmt.Println("MAIN MENU")
-		fmt.Println("-------------------------------")
+		fmt.Println(color.Title + "<MAIN MENU..........................>" + color.Reset)
+		fmt.Println("")
 		fmt.Println("1. Menu Komentar")
 		fmt.Println("2. Menu Sample")
 		fmt.Println("3. Statistik")
-		fmt.Println("4. Exit")
-		fmt.Print("Pilih dengan angka (1/2/3/4): ")
-		fmt.Scanf("%d", &pilih)
+		fmt.Printf("4. %sExit%s\n", color.Red, color.Reset)
+		fmt.Print("Pilih dengan angka (1/2/3/4): " + color.Input)
+		fmt.Scan(&pilih)
+		fmt.Print(color.Reset)
 
 		switch pilih {
 		case 1:

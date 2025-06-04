@@ -5,7 +5,7 @@ import (
 )
 
 // mistis ini wak
-func HitungScore(A global.TabData) global.TabData {
+func HitungScore(A *global.TabData) {
 	var badSc, goodSc, netralSc int
 	var bd, gd, ml bool
 	var multSc int
@@ -54,8 +54,18 @@ func HitungScore(A global.TabData) global.TabData {
 			}
 		}
 		A[h].Score = float64(multSc*(badSc+goodSc+netralSc)) / float64(nKata)
+		if A[h].Score > 1.5 {
+			A[h].Category = "[SANGAT POSITIF]"
+		} else if A[h].Score > 1 {
+			A[h].Category = "[CUKUP POSITIF]"
+		} else if A[h].Score >= 0.5 {
+			A[h].Category = "[NETRAL]"
+		} else if A[h].Score > 0 {
+			A[h].Category = "[CUKUP NEGATIF]"
+		} else {
+			A[h].Category = "[SANGAT NEGATIF]"
+		}
 	}
-	return A
 }
 
 func toLower(s string) string {
@@ -159,4 +169,68 @@ func SequentialSearch(A global.TabData, keyword string) global.TabData {
 		}
 	}
 	return result
+}
+
+func InsertionSort4Search(A global.TabData, category string, comparator string) global.TabData {
+	var i, j int
+	var temp global.Data
+	var parameter, lanjut bool
+
+	for i = 1; i < global.NData; i++ {
+		temp = A[i]
+		j = i - 1
+		lanjut = true
+
+		for j >= 0 && lanjut {
+			switch category + comparator {
+			case "ascScore":
+				parameter = temp.Category < A[j].Category
+			case "dscScore":
+				parameter = temp.Category > A[j].Category
+			}
+
+			if parameter {
+				A[j+1] = A[j]
+				j--
+			} else {
+				lanjut = false
+			}
+		}
+		A[j+1] = temp
+	}
+	return A
+}
+
+func BinarySearch(A global.TabData, category string) global.TabData {
+	var B global.TabData
+	var kiri, kanan, mid int
+	var i, k int
+	var found bool = false
+
+	global.NResult = 0
+	A = InsertionSort4Search(A, "asc", "Score")
+	kiri = 0
+	kanan = global.NData - 1
+	for kiri <= kanan && !found {
+		mid = (kiri + kanan) / 2
+		if A[mid].Category == category {
+			found = true
+			k = mid
+			for k >= 0 && A[k].Category == category {
+				k--
+			}
+			k++
+			for k < global.NData && A[k].Category == category {
+				B[i] = A[k]
+				i++
+				k++
+			}
+		} else if A[mid].Category < category {
+			kiri = mid + 1
+		} else {
+			kanan = mid - 1
+		}
+	}
+	global.NResult = i
+	return B
 }

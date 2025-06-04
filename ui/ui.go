@@ -25,5 +25,5 @@ func Logo() {
 	fmt.Println("| |          `--. \\     |  _  |    ")
 	fmt.Println("| \\__/\\  _  /\\__/ /  _  | | | |  _ ")
 	fmt.Println("\\_____/ (_) \\____/  (_) \\_| |_/ (_)")
-	fmt.Println()
+	fmt.Println("Comment      Section     Analyzer")
 }

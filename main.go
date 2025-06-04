@@ -15,7 +15,7 @@ func main() {
 		pilih = 0
 		ui.ClearScrn()
 		ui.Logo()
-		fmt.Println(color.Title + "<MAIN MENU..........................>" + color.Reset)
+		fmt.Println(color.Title + "<APP....................................>" + color.Reset)
 		fmt.Println("")
 		fmt.Println("1. Menu Komentar")
 		fmt.Println("2. Menu Sample")

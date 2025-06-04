@@ -14,7 +14,7 @@ func Menu() {
 		ui.ClearScrn()
 		ui.Logo()
 		pilih = 0
-		fmt.Println(color.Title + "<STATISTIC MENU.....................>" + color.Reset)
+		fmt.Println(color.Title + "<APP - STATISTIC........................>" + color.Reset)
 		fmt.Println("")
 		fmt.Println("1. Tunjukkan Semua Statistik")
 		fmt.Println("2. Cari Komentar")
@@ -41,6 +41,7 @@ func filters() {
 	for pilih != 5 {
 		ui.ClearScrn()
 		ui.Logo()
+		fmt.Println(color.Title + "<APP - STATISTIC - SORT.................>" + color.Reset)
 		pilih = 0
 		fmt.Println("Tunjukkan Komentar berdasarkan:")
 		fmt.Println("1. Terburuk (ascending)")
@@ -72,6 +73,7 @@ func show(A global.TabData, filterName string, n int) {
 	ui.ClearScrn()
 	fmt.Scanln()
 	ui.Logo()
+	fmt.Println(color.Title + "<APP - STATISTIC - RESULT...............>" + color.Reset)
 	fmt.Println("List Komentar Berdasarkan Filter " + filterName + ":")
 	if n == 0 {
 		fmt.Println("Belum ada komentar, silahkan isi terlebih dahulu.")
@@ -126,6 +128,7 @@ func search() {
 	for pilih != 3 {
 		ui.ClearScrn()
 		ui.Logo()
+		fmt.Println(color.Title + "<APP - STATISTIC - SEARCH...............>" + color.Reset)
 		pilih = 0
 		fmt.Println("Cari Komentar berdasarkan:")
 		fmt.Println("1. Keyword")

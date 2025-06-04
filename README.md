@@ -13,9 +13,9 @@ Komentar yang dimasukkan ke dalam program akan **dibandingkan dengan sample kata
 - 🔁 **Multiplier**: Berisi kata-kata penguat seperti "sangat", "paling", atau "sering", yang dapat meningkatkan bobot skor.
 
 Setiap komentar akan diproses kata per kata, dibandingkan dengan sample yang tersedia, dan menghasilkan **skor numerik** yang merepresentasikan sentimen komentar:
-- Skor diatas 1 → positif
-- Skor dibawah 0.5 → negatif
-- Skor diantara 0.5 dan 1 → netral
+- Skor tinggi → positif
+- Skor rendah → negatif
+- Skor mendekati nol → netral
 
 ---
 

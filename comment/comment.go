@@ -13,7 +13,7 @@ func Menu() {
 		ui.ClearScrn()
 		pilih = 0
 		ui.Logo()
-		fmt.Println(color.Title + "<COMMENT MENU.......................>" + color.Reset)
+		fmt.Println(color.Title + "<APP - COMMENT..........................>" + color.Reset)
 		fmt.Println("")
 		fmt.Println("1. List Semua Komentar")
 		fmt.Println("2. Tambahkan Komentar")
@@ -27,6 +27,8 @@ func Menu() {
 		switch pilih {
 		case 1:
 			ui.ClearScrn()
+			ui.Logo()
+			fmt.Println(color.Title + "<APP - COMMENT - SHOW...................>" + color.Reset)
 			show()
 			ui.Pause()
 		case 2:
@@ -46,7 +48,6 @@ func show() {
 	var i int
 
 	fmt.Scanln()
-	ui.Logo()
 	if global.NData != 0 {
 		fmt.Println("List Semua Komentar:")
 		for i = 0; i < global.NData; i++ {
@@ -64,6 +65,7 @@ func insert() {
 
 	fmt.Scanln()
 	ui.Logo()
+	fmt.Println(color.Title + "<APP - COMMENT - ADD....................>" + color.Reset)
 	fmt.Println("Masukkan komentar diakhiri dengan enter:" + color.Input)
 	for char != '\n' && i < global.MAXrune {
 		fmt.Scanf("%c", &char)
@@ -82,6 +84,8 @@ func edit() {
 	var char rune
 	var teks string = ""
 
+	ui.Logo()
+	fmt.Println(color.Title + "<APP - COMMENT - EDIT...................>" + color.Reset)
 	show()
 	if global.NData > 0 {
 		fmt.Print("\nPilih nomor yang ingin di edit: " + color.Input)
@@ -107,6 +111,8 @@ func delete() {
 	var delNUm int
 	var i int
 
+	ui.Logo()
+	fmt.Println(color.Title + "<APP - COMMENT - DELETE.................>" + color.Reset)
 	show()
 	if global.NData > 0 {
 		fmt.Print("\nPilih nomor yang ingin di hapus: " + color.Input)

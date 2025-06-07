@@ -75,6 +75,7 @@ func show(A global.TabData, filterName string, n int) {
 	var i int
 	var komentar string
 	var score float64
+	var totSP, totCP, totN, totCN, totSN int
 
 	ui.ClearScrn()
 	fmt.Scanln()
@@ -85,23 +86,34 @@ func show(A global.TabData, filterName string, n int) {
 		fmt.Println("Belum ada komentar, silahkan isi terlebih dahulu.")
 	} else {
 		for i = 0; i < n; i++ {
-			komentar = color.LightBlue + A[i].Komentar + color.Reset
+			komentar = color.Show + A[i].Komentar + color.Reset
 			score = A[i].Score
 			fmt.Printf("%d. %s\n", i+1, komentar)
 			fmt.Printf("[Score = %.2f] ", score)
 			switch A[i].Category {
 			case "[SANGAT POSITIF]":
 				fmt.Println(color.Green + A[i].Category + color.Reset)
+				totSP++
 			case "[CUKUP POSITIF]":
 				fmt.Println(color.LimeGreen + A[i].Category + color.Reset)
+				totCP++
 			case "[NETRAL]":
 				fmt.Println(color.Yellow + A[i].Category + color.Reset)
+				totN++
 			case "[CUKUP NEGATIF]":
 				fmt.Println(color.Orange + A[i].Category + color.Reset)
+				totCN++
 			case "[SANGAT NEGATIF]":
 				fmt.Println(color.DarkRed + A[i].Category + color.Reset)
+				totSN++
 			}
 		}
+		fmt.Println()
+		fmt.Printf("Total komentar "+color.Green+"[SANGAT POSITIF]: "+color.Show+"%d"+color.Reset+" ;\n", totSP)
+		fmt.Printf("Total komentar "+color.LimeGreen+"[CUKUP POSITIF]:  "+color.Show+"%d"+color.Reset+" ;\n", totCP)
+		fmt.Printf("Total komentar "+color.Yellow+"[NETRAL]:\t "+color.Show+"%d"+color.Reset+" ;\n", totN)
+		fmt.Printf("Total komentar "+color.Orange+"[CUKUP NEGATIF]:  "+color.Show+"%d"+color.Reset+" ;\n", totCN)
+		fmt.Printf("Total komentar "+color.DarkRed+"[SANGAT NEGATIF]: "+color.Show+"%d"+color.Reset+" ;\n", totSN)
 
 	}
 	ui.Pause()
@@ -178,10 +190,10 @@ func keywordSearch() {
 	result = process.SequentialSearch(result, keyword)
 	if len(result) == 0 || global.NResult == 0 {
 		fmt.Scanln()
-		fmt.Println(color.Log + "Komentar dengan kata kunci tersebut tidak ditemukan." + color.Reset)
+		fmt.Println("Komentar dengan kata kunci tersebut tidak ditemukan.")
 		ui.Pause()
 	} else {
-		show(result, "Hasil Pencarian untuk '"+color.Underline+color.Bold+keyword+color.Reset+"'", global.NResult)
+		show(result, "Hasil Pencarian untuk '"+color.Result+keyword+color.Reset+"'", global.NResult)
 	}
 }
 
@@ -213,7 +225,7 @@ func categorySearch() {
 				show(A, "[SANGAT POSITIF]", global.NResult)
 			} else {
 				fmt.Scanln()
-				fmt.Println(color.Log + "Komentar dengan kategori tersebut tidak ditemukan." + color.Reset)
+				fmt.Println("Komentar dengan kategori tersebut tidak ditemukan.")
 				ui.Pause()
 			}
 
@@ -223,7 +235,7 @@ func categorySearch() {
 				show(A, "[CUKUP POSITIF]", global.NResult)
 			} else {
 				fmt.Scanln()
-				fmt.Println(color.Log + "Komentar dengan kategori tersebut tidak ditemukan." + color.Reset)
+				fmt.Println("Komentar dengan kategori tersebut tidak ditemukan.")
 				ui.Pause()
 			}
 
@@ -233,7 +245,7 @@ func categorySearch() {
 				show(A, "[NETRAL]", global.NResult)
 			} else {
 				fmt.Scanln()
-				fmt.Println(color.Log + "Komentar dengan kategori tersebut tidak ditemukan." + color.Reset)
+				fmt.Println("Komentar dengan kategori tersebut tidak ditemukan.")
 				ui.Pause()
 			}
 
@@ -243,7 +255,7 @@ func categorySearch() {
 				show(A, "[CUKUP NEGATIF]", global.NResult)
 			} else {
 				fmt.Scanln()
-				fmt.Println(color.Log + "Komentar dengan kategori tersebut tidak ditemukan." + color.Reset)
+				fmt.Println("Komentar dengan kategori tersebut tidak ditemukan.")
 				ui.Pause()
 			}
 
@@ -253,7 +265,7 @@ func categorySearch() {
 				show(A, "[SANGAT NEGATIF]", global.NResult)
 			} else {
 				fmt.Scanln()
-				fmt.Println(color.Log + "Komentar dengan kategori tersebut tidak ditemukan." + color.Reset)
+				fmt.Println("Komentar dengan kategori tersebut tidak ditemukan.")
 				ui.Pause()
 			}
 		}

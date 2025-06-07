@@ -53,7 +53,7 @@ func show() {
 			fmt.Printf("%d. %s%s%s\n", i+1, color.Show, global.D[i].Komentar, color.Reset)
 		}
 	} else {
-		fmt.Println(color.Log + "Belum ada komentar, silahkan tambahkan komentar." + color.Reset)
+		fmt.Println("Belum ada komentar, silahkan tambahkan komentar.")
 	}
 }
 

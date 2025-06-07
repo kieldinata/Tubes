@@ -55,7 +55,7 @@ func show() {
 			fmt.Printf("%d. %-10s\n", i+1, global.Bad[i])
 		}
 	} else {
-		fmt.Println(color.Gray + "Sample [bad] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
+		fmt.Println("Sample [bad] belum ada, silahkan isi sample terlebih dahulu.")
 	}
 	if global.NG != 0 {
 		fmt.Println(color.Green + "\n\nList Sample Good:" + color.Reset)
@@ -63,7 +63,7 @@ func show() {
 			fmt.Printf("%d. %-10s\n", i+1, global.Good[i])
 		}
 	} else {
-		fmt.Println(color.Gray + "Sample [good] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
+		fmt.Println("Sample [good] belum ada, silahkan isi sample terlebih dahulu.")
 	}
 	if global.NM != 0 {
 		fmt.Println(color.Yellow + "\n\nList Sample Multiplier:" + color.Reset)
@@ -71,7 +71,7 @@ func show() {
 			fmt.Printf("%d. %-10s \n", i+1, global.Mult[i])
 		}
 	} else {
-		fmt.Println(color.Gray + "Sample [mult] belum ada, silahkan isi sample terlebih dahulu." + color.Reset)
+		fmt.Println("Sample [mult] belum ada, silahkan isi sample terlebih dahulu.")
 	}
 	ui.Pause()
 }
@@ -154,7 +154,7 @@ func editPerType(x *global.TabSamples, nX int) {
 	} else {
 		fmt.Println("Masukkan sample  versi terbaru: " + color.Input)
 		fmt.Scan(&x[edNum-1])
-		fmt.Print(color.Log + "Sample berhasil di ubah!" + color.Reset)
+		fmt.Print("Sample berhasil di ubah!")
 	}
 	ui.Pause()
 }

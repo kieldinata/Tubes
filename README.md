@@ -27,8 +27,8 @@ Setiap komentar akan diproses kata per kata, dibandingkan dengan sample yang ter
 - 📥 Memasukkan sample kata (Good, Bad, Multiplier)
 - 🛠️ Mengedit sample kata
 - 🗑️ Menghapus sample kata
-- 📊 Analisis skor komentar
-- 🔢 Sorting komentar berdasarkan skor menggunakan **Insertion Sort**
+- 📊 Analisis skor dan total komentar
+- 🔢 Sorting komentar berdasarkan skor/kategori menggunakan **Insertion Sort**
 - 🔤 Sorting komentar berdasarkan abjad menggunakan **Selection Sort**
 - 📏 Sorting komentar berdasarkan panjang kalimat menggunakan **Selection Sort**
 - 🔍 Pencarian komentar berdasarkan keyword menggunakan **Sequential Search**
@@ -46,8 +46,8 @@ git clone https://github.com/kieldinata/Tubes
 
 ## ▶️ Penggunaan
 
-Masuk ke folder tempat file `main.go` berada, lalu jalankan perintah berikut di terminal:
+Masuk ke folder tempat file `IF-48-10_AP2-02_main.go` berada, lalu jalankan perintah berikut di terminal:
 
 ```bash
-go run main.go
+go run IF-48-10_AP2-02_main.go
 ```

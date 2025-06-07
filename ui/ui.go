@@ -14,11 +14,13 @@ func ClearScrn() {
 }
 
 func Pause() {
-	fmt.Print(color.Gray + "\n\nTekan enter untuk melanjutkan..." + color.Reset)
+	fmt.Print(color.Blink + color.Gray + "\n\nTekan enter untuk melanjutkan..." + color.Reset)
 	fmt.Scanln()
 }
 
 func Logo() {
+	fmt.Println()
+	fmt.Println()
 	fmt.Println(" _____       _____        ___      ")
 	fmt.Println("/  __ \\     /  ___|      / _ \\     ")
 	fmt.Println("| /  \\/     \\ `--.      / /_\\ \\    ")
